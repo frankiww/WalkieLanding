@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лендинг</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- Баннер размещается в конце body, по умолчанию скрыт -->
+<div id="cookie-notice" class="cookie-notice" hidden>
+    <div class="cookie-notice__text">
+        <p>Мы используем файлы cookie для анализа трафика и улучшения работы сайта. 
+        Подробнее — в <a href="/privacy.html">политике конфиденциальности</a>.</p>
+    </div>
+    <div class="cookie-notice__actions">
+        <button id="cookie-accept" class="cookie-btn cookie-btn_accept">Принять</button>
+        <button id="cookie-reject" class="cookie-btn cookie-btn_reject">Отклонить</button>
+    </div>
+</div>
+
+<body>
+
+    <!-- Шапка с логотипом и меню -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="#hero" class="logo">
+                <img src="assets/logo.svg" alt="Волкай">
+            </a>
+            <nav class="main-nav">
+                <a href="#hero">Главная</a>
+                <a href="#how">Как это работает</a>
+                <a href="#download">Скачать</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 1. Главный экран -->
+    <section id="hero" class="section section-hero">
+    <div class="section-inner">
+        <h1 class="hero-title">Волкай</h1>
+        <p class="hero-subtitle">— там где ты еще не был</p>
+    </div>
+</section>
+
+    <!-- 2. Краткое описание -->
+    <section id="about" class="section section-about">
+        <div class="section-inner">
+            <h2 class="about-title">Волкай: Трекер прогулок</h2>
+            <p class="about-descr">
+                Игровое приложение-трекер, превращающее прогулки в квест. Гуляйте в реальном мире,
+                зарабатывайте валюту и награды для вашего виртуального питомца. Чем больше прогулок, тем
+                уютнее его жилище.
+            </p>
+            <a href="mailto:walkie_team@proton.me?subject=Ранний доступ" class="about-btn">
+                <span class="about-btn__text">Напишите нам</span>
+                <svg class="about-btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M5 12H19M19 12L13 6M19 12L13 18"
+                        stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- 3. Как работает -->
+    <section id="how" class="section section-how">
+    <div class="section-inner">
+        <h2 class="how-title">Как работает приложение</h2>
+        <p class="how-descr">
+            Приложение отслеживает прогулки и позволяет зарабатывать награды
+            для обустройства комнаты вашего питомца. Доступны достижения
+            за выполнение заданий.
+        </p>
+
+        <ul class="how-grid">
+            <li class="how-item">
+                <span class="how-item__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12.5L10 17.5L19 8"
+                              stroke="#553d28" stroke-width="2.2"
+                              stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <div class="how-item__body">
+                    <h3 class="how-item__title">Отслеживание прогулок</h3>
+                    <p class="how-item__descr">
+                        Приложение фиксирует ваши перемещения, превращая обычные
+                        прогулки в игровой процесс.
+                    </p>
+                </div>
+            </li>
+
+            <li class="how-item">
+                <span class="how-item__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12.5L10 17.5L19 8"
+                              stroke="#553d28" stroke-width="2.2"
+                              stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <div class="how-item__body">
+                    <h3 class="how-item__title">Уникальные награды</h3>
+                    <p class="how-item__descr">
+                        Получайте уникальные предметы, которые можно использовать
+                        для обустройства комнаты вашего виртуального питомца.
+                    </p>
+                </div>
+            </li>
+
+            <li class="how-item">
+                <span class="how-item__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12.5L10 17.5L19 8"
+                              stroke="#553d28" stroke-width="2.2"
+                              stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <div class="how-item__body">
+                    <h3 class="how-item__title">Достижения</h3>
+                    <p class="how-item__descr">
+                        Открывайте достижения за прогулки и активность.
+                    </p>
+                </div>
+            </li>
+
+            <li class="how-item">
+                <span class="how-item__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12.5L10 17.5L19 8"
+                              stroke="#553d28" stroke-width="2.2"
+                              stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <div class="how-item__body">
+                    <h3 class="how-item__title">Кастомизация комнаты питомца</h3>
+                    <p class="how-item__descr">
+                        Обустраивайте и украшайте комнату вашего питомца,
+                        делая её всё более уютной и стильной.
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    </section>
+
+    <!-- 4. Скачайте приложение -->
+    <section id="download" class="section section-download">
+    <div class="section-inner">
+        <h2 class="download-title">Скачайте приложение</h2>
+        <p class="download-descr">
+            Установите приложение «Волкай» и начните превращать свои прогулки
+            в увлекательный квест. Скачайте приложение прямо сейчас!
+        </p>
+
+        <ul class="download-cards">
+            <li class="card">
+                <div class="card__img-wrapper">
+                    <img src="assets/card-1.png" alt="Установите приложение Волкай" class="card__img">
+                </div>
+                <h3 class="card__title">Установите приложение Волкай</h3>
+                <p class="card__descr">
+                    Начните своё приключение с установки приложения и откройте
+                    для себя новый способ прогулок!
+                </p>
+                <a href="https://drive.google.com/file/d/1v-OqlXe_347C8Ad6jVG7JxjHCSXibn51/view"
+                   class="card__btn" target="_blank" rel="noopener">
+                    <span>Скачать</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                         xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M5 12H19M19 12L13 6M19 12L13 18"
+                              stroke="currentColor" stroke-width="1.8"
+                              stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </li>
+
+            <li class="card">
+                <div class="card__img-wrapper">
+                    <img src="assets/card-2.png" alt="Превратите прогулки в квест" class="card__img">
+                </div>
+                <h3 class="card__title">Превратите прогулки в квест</h3>
+                <p class="card__descr">
+                    Гуляйте в реальном мире и зарабатывайте внутриигровую валюту
+                    и уникальные награды для вашего виртуального питомца.
+                </p>
+                <a href="https://drive.google.com/file/d/1v-OqlXe_347C8Ad6jVG7JxjHCSXibn51/view"
+                   class="card__btn" target="_blank" rel="noopener">
+                    <span>Скачать</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                         xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M5 12H19M19 12L13 6M19 12L13 18"
+                              stroke="currentColor" stroke-width="1.8"
+                              stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </li>
+
+            <li class="card">
+                <div class="card__img-wrapper">
+                    <img src="assets/card-3.png" alt="Обустройте дом для питомца" class="card__img">
+                </div>
+                <h3 class="card__title">Обустройте дом для питомца</h3>
+                <p class="card__descr">
+                    Используйте полученные предметы для обустройства комнаты
+                    вашего виртуального питомца и сделайте его дом стильным и уютным.
+                </p>
+                <a href="https://drive.google.com/file/d/1v-OqlXe_347C8Ad6jVG7JxjHCSXibn51/view"
+                   class="card__btn" target="_blank" rel="noopener">
+                    <span>Скачать</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                         xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M5 12H19M19 12L13 6M19 12L13 18"
+                              stroke="currentColor" stroke-width="1.8"
+                              stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+
+        <!-- Карусель -->
+        <div class="carousel" aria-label="Скриншоты приложения">
+            <button class="carousel__arrow carousel__arrow_prev" aria-label="Предыдущий слайд">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none"
+                     xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M15 5L8 12L15 19" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+
+            <div class="carousel__viewport" id="carousel">
+                <div class="carousel__slide">
+                    <img src="assets/slide-1.png" alt="Скриншот приложения 1">
+                </div>
+                <div class="carousel__slide">
+                    <img src="assets/slide-2.png" alt="Скриншот приложения 2">
+                </div>
+                <div class="carousel__slide">
+                    <img src="assets/slide-3.png" alt="Скриншот приложения 3">
+                </div>
+            </div>
+
+            <button class="carousel__arrow carousel__arrow_next" aria-label="Следующий слайд">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none"
+                     xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+
+            <div class="carousel__dots" role="tablist">
+                <button class="carousel__dot is-active" data-index="0" aria-label="Слайд 1"></button>
+                <button class="carousel__dot" data-index="1" aria-label="Слайд 2"></button>
+                <button class="carousel__dot" data-index="2" aria-label="Слайд 3"></button>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- 5. Контакты -->
+    <section id="contacts" class="section section-contacts">
+    <div class="section-inner">
+        <p class="contacts-eyebrow">Новости и обновления</p>
+        <h2 class="contacts-title">Следите за обновлениями приложения Волкай!</h2>
+
+        <ul class="contacts-socials">
+            <li>
+                <a href="https://vk.ru/club237668309" class="social-link"
+                   target="_blank" rel="noopener" aria-label="ВКонтакте">
+                    <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                        <path fill="currentColor" d="M12.785 16.241s.288-.032.436-.194c.136-.148.132-.427.132-.427s-.02-1.304.576-1.496c.587-.19 1.34 1.262 2.14 1.822.604.423 1.063.33 1.063.33l2.135-.03s1.117-.07.587-.956c-.043-.072-.31-.66-1.596-1.867-1.345-1.264-1.165-1.059.455-3.245.987-1.331 1.381-2.144 1.258-2.492-.117-.33-.842-.243-.842-.243l-2.403.015s-.178-.024-.31.055c-.13.078-.213.26-.213.26s-.382 1.026-.89 1.898c-1.075 1.84-1.504 1.937-1.68 1.823-.405-.265-.304-1.062-.304-1.629 0-1.771.264-2.51-.517-2.7-.258-.063-.448-.104-1.11-.111-.849-.009-1.566.003-1.973.204-.271.134-.48.433-.353.45.157.022.513.097.702.36.243.336.234 1.09.234 1.09s.14 2.084-.326 2.343c-.32.177-.76-.184-1.705-1.84-.484-.842-.849-1.772-.849-1.772s-.07-.173-.197-.265c-.153-.111-.367-.147-.367-.147l-2.284.015s-.343.01-.469.16c-.113.134-.009.41-.009.41s1.789 4.18 3.814 6.286c1.857 1.932 3.965 1.805 3.965 1.805z"/>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.tiktok.com/@walkie_game" class="social-link"
+                   target="_blank" rel="noopener" aria-label="TikTok">
+                    <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                        <path fill="currentColor" d="M16.5 5.5a4.5 4.5 0 0 1-2.5-4h-2.8v12.7a2.6 2.6 0 1 1-2.6-2.6c.27 0 .53.04.78.12V8.9a5.4 5.4 0 1 0 4.62 5.34V9.18a7.3 7.3 0 0 0 4.3 1.38V7.78A4.5 4.5 0 0 1 16.5 5.5z"/>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="mailto:walkie_team@proton.me?subject=Ранний доступ" class="social-link"
+                   aria-label="Написать нам">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none"
+                         xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect x="3" y="5" width="18" height="14" rx="2"
+                              stroke="currentColor" stroke-width="1.8"/>
+                        <path d="M4 7L12 13L20 7" stroke="currentColor" stroke-width="1.8"
+                              stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+        <p class="contacts-policy">
+            <a href="/privacy.html">Политика конфиденциальности</a>
+        </p>
+    </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

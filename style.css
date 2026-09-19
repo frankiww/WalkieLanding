@@ -1,0 +1,671 @@
+/* ---------- Базовые сбросы ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    line-height: 1.5;
+}
+
+
+/* ---------- Переменные-заглушки для цветов ---------- */
+:root {
+    --color-purple: #3D0066;   /* шапка */
+    --color-beige:  #FFEDD1;   /* светлые блоки */
+    --color-brown:  #553D28;   /* тёмные блоки */
+
+    --text-on-dark:  #FFEDD1;  /* текст на тёмном фоне */
+    --text-on-light: #553D28;  /* текст на светлом фоне */
+
+    --header-height: 80px;
+}
+
+/* ---------- Шапка ---------- */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background-color: var(--color-purple);
+    color: var(--text-on-dark);
+    z-index: 1000;
+}
+
+.header-inner {
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: var(--text-on-dark);
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+.logo img {
+    height: 60px;      /* подберите под высоту шапки */
+    width: auto;       /* сохраняет пропорции */
+    display: block;
+}
+
+.main-nav a {
+    color: var(--text-on-dark);
+    text-decoration: none;
+    margin-left: 24px;
+    font-size: 18px;
+}
+
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Общие стили секций ---------- */
+.section {
+    /* компенсируем высоту фиксированной шапки при переходе по якорю */
+    scroll-margin-top: var(--header-height);
+    padding: 80px 24px;
+}
+
+.section-hero {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url('assets/splash.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;       /* вертикальное центрирование */
+    justify-content: center;   /* горизонтальное центрирование блока */
+    padding: 0 24px;           /* отступы по бокам на случай узких экранов */
+}
+
+.section-inner {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;        /* центрирование текста внутри блока */
+    margin: 0 auto; 
+    padding: 0 24px; 
+}
+
+.hero-title {
+    font-size: 120px;
+    color: var(--text-on-dark);            /* бежевый */
+    font-weight: 900;
+    letter-spacing: 10px;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.hero-subtitle {
+    font-size: 32px;
+    color: var(--text-on-dark);            /* бежевый */
+    font-weight: 400;
+    margin: 8px 0 0;
+}
+/* ABOUT */
+.section-about {
+    min-height: 80vh;
+    background-color: var(--color-beige);
+    color: var(--text-on-light);
+    text-align: center;   /* центрируем текст и кнопку */
+        padding-top: 160px;
+    padding-bottom: 160px;
+}
+
+.about-title {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0 0 32px;
+    color: var(--text-on-light);
+}
+
+.about-descr {
+    font-size: 24px;
+    line-height: 1.55;
+    min-width: 70vb;        /* ограничиваем ширину абзаца */
+    margin: 0 auto 48px;     /* центрируем и даём отступ снизу */
+    color: var(--text-on-light);
+}
+
+.about-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 40px;
+    border: 2px solid var(--text-on-light);
+    border-radius: 50px;             /* таблетка */
+    background-color: transparent;
+    color: var(--text-on-light);
+    font-size: 26px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.about-btn:hover {
+    background-color: var(--text-on-light);
+    color: var(--color-beige);
+}
+
+.about-btn__icon {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.about-btn:hover .about-btn__icon {
+    transform: translateX(4px);   /* стрелка чуть уезжает вправо при наведении */
+}
+/* HOW */
+
+.section-how {
+    background-color: var(--color-brown);
+    color: var(--text-on-dark);
+    text-align: center;
+    padding-top: 140px;
+    padding-bottom: 140px;
+}
+
+.how-title {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0 0 24px;
+    color: var(--text-on-dark);
+}
+
+.how-descr {
+    font-size: 20px;
+    line-height: 1.55;
+    max-width: 620px;
+    margin: 0 auto 80px;
+    color: var(--text-on-dark);
+}
+
+.how-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px 64px;
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;    /* возвращаем выравнивание текста влево внутри пунктов */
+}
+
+.how-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.how-item__icon {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #ffdaa2;    /* акцентный бежевый — как в Tilda */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;              /* чуть выравниваем по оптическому центру строки */
+}
+
+.how-item__title {
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 10px;
+    color: var(--text-on-dark);
+}
+
+.how-item__descr {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    color: var(--text-on-dark);
+}
+/* DOWNLOAD */
+.section-download {
+    background-color: var(--color-beige);
+    color: var(--text-on-light);
+    text-align: center;
+    padding-top: 140px;
+    padding-bottom: 140px;
+}
+
+.download-title {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0 0 24px;
+    color: var(--text-on-light);
+}
+
+.download-descr {
+    font-size: 20px;
+    line-height: 1.55;
+    max-width: 620px;
+    margin: 0 auto 80px;
+    color: var(--text-on-light);
+}
+
+/* --- Карточки --- */
+.download-cards {
+    list-style: none;
+    margin: 0 0 100px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    text-align: left;
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card__img-wrapper {
+    aspect-ratio: 1 / 1;           /* квадратная картинка как на скрине */
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 28px;
+    background-color: #f3e3c3;      /* заглушка, пока картинка грузится */
+}
+
+.card__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;              /* обрезает по центру, если пропорции другие */
+}
+
+.card__title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 16px;
+    color: var(--text-on-light);
+}
+
+.card__descr {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0 0 24px;
+    color: var(--text-on-light);
+}
+
+.card__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;                /* прижимает кнопку к низу карточки */
+    color: var(--text-on-light);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    width: fit-content;
+}
+
+.card__btn svg {
+    transition: transform 0.2s ease;
+}
+
+.card__btn:hover svg {
+    transform: translateX(4px);
+}
+
+.carousel {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 56px;                /* место под стрелки */
+}
+
+.carousel__viewport {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 16px;
+    border-radius: 12px;
+
+    /* прячем скроллбар, но оставляем прокрутку */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.carousel__viewport::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel__slide {
+    flex: 0 0 100%;                 /* один слайд = ширина viewport */
+    scroll-snap-align: center;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.carousel__slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.carousel__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-on-light);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    z-index: 2;
+}
+
+.carousel__arrow_prev { left: 0; }
+.carousel__arrow_next { right: 0; }
+
+.carousel__dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.carousel__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(85, 61, 40, 0.3);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.carousel__dot.is-active {
+    background-color: var(--text-on-light);
+}
+/* CONTACTS */
+
+.section-contacts {
+    background-color: var(--color-brown);
+    color: var(--text-on-dark);
+    text-align: center;
+    padding-top: 140px;
+    padding-bottom: 140px;
+}
+
+.contacts-eyebrow {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    margin: 0 0 32px;
+    color: var(--text-on-dark);
+    opacity: 0.9;
+}
+
+.contacts-title {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.2;
+    max-width: 700px;
+    margin: 0 auto 56px;
+    color: var(--text-on-dark);
+}
+
+.contacts-socials {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #ffdaa2;
+    color: var(--color-brown);
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+    background-color: #ffedd1;
+}
+
+.social-link svg {
+    display: block;
+}
+
+.contacts-policy {
+    margin: 40px 0 0;
+    font-size: 14px;
+}
+
+.contacts-policy a {
+    color: var(--text-on-dark);
+    opacity: 0.75;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity 0.2s ease;
+}
+
+.contacts-policy a:hover {
+    opacity: 1;
+}
+
+
+/* ---------- Баннер Cookie ---------- */
+.cookie-notice {
+    position: fixed;
+    left: 24px;
+    right: 24px;
+    bottom: 24px;
+    z-index: 2000;             /* выше шапки, у неё 1000 */
+    background-color: #ffffff;
+    color: var(--text-on-light);
+    border-radius: 16px;
+    padding: 20px 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    max-width: 1080px;
+    margin: 0 auto;            /* центрирует блок, если он уже, чем экран */
+}
+
+/* важно: hidden должен побеждать display:flex */
+.cookie-notice[hidden] {
+    display: none;
+}
+
+.cookie-notice__text {
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.cookie-notice__text p {
+    margin: 0;
+}
+
+.cookie-notice__text a {
+    color: var(--text-on-light);
+    text-decoration: underline;
+}
+
+.cookie-notice__actions {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.cookie-btn {
+    padding: 12px 24px;
+    border-radius: 999px;
+    border: 2px solid transparent;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    font-family: inherit;
+}
+
+.cookie-btn_accept {
+    background-color: var(--color-brown);
+    color: #ffedd1;
+}
+
+.cookie-btn_accept:hover {
+    background-color: #3d2a1d;    /* чуть темнее коричневого */
+}
+
+.cookie-btn_reject {
+    background-color: transparent;
+    color: var(--text-on-light);
+    border-color: var(--text-on-light);
+}
+
+.cookie-btn_reject:hover {
+    background-color: rgba(85, 61, 40, 0.08);
+}
+
+/* POLICY */
+.page-policy {
+    background-color: var(--color-beige);
+    color: var(--text-on-light);
+    padding: 120px 24px 80px;
+}
+
+.policy-content {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.65;
+    font-size: 17px;
+}
+
+.policy-content h1 {
+    font-size: 40px;
+    margin-bottom: 32px;
+}
+
+.policy-content h2 {
+    font-size: 24px;
+    margin-top: 48px;
+    margin-bottom: 16px;
+}
+
+/* ---------- Адаптив для меню ---------- */
+@media (max-width: 768px) {
+    .main-nav a {
+        margin-left: 12px;
+        font-size: 13px;
+    }
+    .section-how {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+    .about-title {
+        font-size: 34px;
+        margin-bottom: 20px;
+    }
+    .about-descr {
+        font-size: 17px;
+        margin-bottom: 32px;
+    }
+    .about-btn {
+        padding: 14px 28px;
+        font-size: 16px;
+    }
+    .how-title {
+        font-size: 34px;
+    }
+    .how-descr {
+        font-size: 17px;
+        margin-bottom: 48px;
+    }
+    .how-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+        .download-cards {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        max-width: 480px;
+    }
+    .download-title {
+        font-size: 34px;
+    }
+    .download-descr {
+        font-size: 17px;
+        margin-bottom: 48px;
+    }
+    .section-download {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+    .carousel {
+        padding: 0 40px;
+    }
+    .section-contacts {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+    .contacts-title {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+    .social-link {
+        width: 48px;
+        height: 48px;
+    }
+        .cookie-notice {
+        flex-direction: column;
+        align-items: stretch;
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        padding: 18px 20px;
+    }
+    .cookie-notice__actions {
+        justify-content: stretch;
+    }
+    .cookie-btn {
+        flex: 1;
+    }
+}
