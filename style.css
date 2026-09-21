@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -137,7 +142,7 @@ body {
 .about-descr {
     font-size: 24px;
     line-height: 1.55;
-    min-width: 70vb;        /* ограничиваем ширину абзаца */
+    max-width: 780px;          /* ограничиваем ширину абзаца */
     margin: 0 auto 48px;     /* центрируем и даём отступ снизу */
     color: var(--text-on-light);
 }
@@ -592,69 +597,133 @@ body {
 
 /* ---------- Адаптив для меню ---------- */
 @media (max-width: 768px) {
-    .main-nav a {
-        margin-left: 12px;
-        font-size: 13px;
+    /* --- Шапка --- */
+    :root {
+        --header-height: 96px;
     }
+    .site-header {
+        height: auto;
+    }
+    .header-inner {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 10px 16px;
+        height: auto;             /* ключевое: снимаем height: 100% */
+    }
+    .logo img {
+        height: 26px;
+        width: auto;
+    }
+     .main-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px 12px;
+        width: 100%;
+    }
+    .main-nav a {
+        margin-left: 0;
+        font-size: 13px;
+        padding: 4px 6px;
+        white-space: nowrap;
+    }
+    /* --- Hero --- */
+    .section-hero {
+        padding: 0 20px;
+        min-height: 90vh;
+    }
+    .hero-title {
+        font-size: 38px;
+    }
+    .hero-subtitle {
+        font-size: 18px;
+    }
+
+    /* --- About --- */
+    .section-about {
+        padding-top: 90px;
+        padding-bottom: 90px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .about-title {
+        font-size: 30px;
+        margin-bottom: 18px;
+    }
+    .about-descr {
+        font-size: 16px;
+        margin-bottom: 28px;
+    }
+    .about-btn {
+        padding: 14px 28px;
+        font-size: 15px;
+    }
+
+    /* --- How --- */
     .section-how {
         padding-top: 90px;
         padding-bottom: 90px;
     }
-    .about-title {
-        font-size: 34px;
-        margin-bottom: 20px;
-    }
-    .about-descr {
-        font-size: 17px;
-        margin-bottom: 32px;
-    }
-    .about-btn {
-        padding: 14px 28px;
-        font-size: 16px;
-    }
     .how-title {
-        font-size: 34px;
+        font-size: 30px;
     }
     .how-descr {
-        font-size: 17px;
-        margin-bottom: 48px;
+        font-size: 16px;
+        margin-bottom: 40px;
     }
     .how-grid {
         grid-template-columns: 1fr;
-        gap: 32px;
+        gap: 28px;
     }
-        .download-cards {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        max-width: 480px;
-    }
-    .download-title {
-        font-size: 34px;
-    }
-    .download-descr {
+    .how-item__title {
         font-size: 17px;
-        margin-bottom: 48px;
     }
+    .how-item__descr {
+        font-size: 15px;
+    }
+
+    /* --- Download --- */
     .section-download {
         padding-top: 90px;
         padding-bottom: 90px;
     }
-    .carousel {
-        padding: 0 40px;
+    .download-title {
+        font-size: 30px;
     }
+    .download-descr {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+    .download-cards {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        max-width: 480px;
+    }
+    .card__title {
+        font-size: 20px;
+    }
+    .carousel {
+        padding: 0 36px;
+    }
+
+    /* --- Contacts --- */
     .section-contacts {
         padding-top: 90px;
         padding-bottom: 90px;
     }
     .contacts-title {
-        font-size: 28px;
-        margin-bottom: 40px;
+        font-size: 26px;
+        margin-bottom: 32px;
     }
     .social-link {
         width: 48px;
         height: 48px;
     }
-        .cookie-notice {
+
+    /* --- Cookie --- */
+    .cookie-notice {
         flex-direction: column;
         align-items: stretch;
         left: 16px;
