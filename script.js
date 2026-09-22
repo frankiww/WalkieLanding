@@ -1,7 +1,65 @@
-// Пока пусто — сюда позже добавим логику баннера cookie
-// и условную загрузку Яндекс Метрики.
 
 document.addEventListener('DOMContentLoaded', () => {
+    // МЕТРИКА
+    const notice = document.getElementById('cookie-notice');
+    const acceptBtn = document.getElementById('cookie-accept');
+    const rejectBtn = document.getElementById('cookie-reject');
+
+    const CONSENT_KEY = 'cookie-consent';
+    const METRIKA_ID = 112818949;
+
+    function loadAnalytics() {
+        if (window.__metrikaLoaded) return;   // защита от двойной загрузки
+        window.__metrikaLoaded = true;
+
+        (function(m, e, t, r, i, k, a) {
+            m[i] = m[i] || function() { (m[i].a = m[i].a || []).push(arguments); };
+            m[i].l = 1 * new Date();
+            for (let j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) { return; }
+            }
+            k = e.createElement(t);
+            a = e.getElementsByTagName(t)[0];
+            k.async = 1;
+            k.src = r;
+            a.parentNode.insertBefore(k, a);
+        })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=' + METRIKA_ID, 'ym');
+
+        ym(METRIKA_ID, 'init', {
+            ssr: true,
+            webvisor: true,
+            clickmap: true,
+            referrer: document.referrer,
+            url: location.href,
+            accurateTrackBounce: true,
+            trackLinks: true
+        });
+    }
+    // логика баннера
+    const saved = localStorage.getItem(CONSENT_KEY);
+
+    if (saved === 'accepted') {
+        // уже приняли — грузим Метрику, баннер не показываем
+        loadAnalytics();
+    } else if (saved === 'rejected') {
+        // уже отклонили — ничего не грузим, баннер не показываем
+    } else {
+        // решения нет — показываем баннер
+        notice.hidden = false;
+
+        acceptBtn.addEventListener('click', () => {
+            localStorage.setItem(CONSENT_KEY, 'accepted');
+            notice.hidden = true;
+            loadAnalytics();
+        });
+
+        rejectBtn.addEventListener('click', () => {
+            localStorage.setItem(CONSENT_KEY, 'rejected');
+            notice.hidden = true;
+            // Метрику не грузим
+        });
+    }
+
     const viewport = document.getElementById('carousel');
     if (!viewport) return;
 
